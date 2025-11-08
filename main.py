@@ -39,7 +39,11 @@ def categorize_transactions(df):
 
 def load_transactions(file):
     try:
-        df = pd.read_csv(file)
+        df = pd.DataFrame
+        with urllib.request.urlopen('https://raw.githubusercontent.com/ps67/streamlit-app/refs/heads/main/sample_bank_statement.csv') as fh:
+            df = pd.read_csv(fh)
+
+        #df = pd.read_csv(file)
         df.columns = [col.strip() for col in df.columns]
         df["Amount"] = df["Amount"].str.replace(",", "").astype(float)
         df["Date"] = pd.to_datetime(df["Date"], format="%d %b %Y") 
@@ -139,6 +143,7 @@ def main():
         
 
 main()
+
 
 
 

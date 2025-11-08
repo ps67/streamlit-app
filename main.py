@@ -123,18 +123,19 @@ def main():
                     hide_index=True
                 )
                 
-                fig = px.pie(
+                """ fig = (px.pie(
                     category_totals,
                     values="Amount",
                     names="Category",
                     title="Expenses by Category"
                 )
                 st.plotly_chart(fig, use_container_width=True)
-                
+                """
             with tab2:
                 st.subheader("Payments Summary")
                 total_payments = credits_df["Amount"].sum()
                 st.metric("Total Payments", f"{total_payments:,.2f} AED")
                 st.write(credits_df)
         
+
 main()

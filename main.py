@@ -6,7 +6,7 @@ import os
 
 st.set_page_config(page_title="Simple Finance App", page_icon="💰", layout="wide")
 
-category_file = "categories.json"
+category_file = "/categories.json"
 
 if "categories" not in st.session_state:
     st.session_state.categories = {
@@ -139,4 +139,5 @@ def main():
         
 
 main()
+
 
